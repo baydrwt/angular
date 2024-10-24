@@ -9,11 +9,11 @@
     </tr>
   </thead>
   <tbody>
-    @if(!results()){
+    @if(!results){
     <tr>
       <td colspan="4">Please enter some value to calculate</td>
     </tr>
-    }@else{ @for(result of results(); track result.year){
+    }@else{ @for(result of results; track result.year){
     <tr>
       <td>{{ result.year }}</td>
       <td>{{ result.valueEndOfYear | currency : "IDR" }}</td>
