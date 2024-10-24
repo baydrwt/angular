@@ -5,26 +5,17 @@ import { InvestmentInput } from './investment-input.model';
   providedIn: 'root',
 })
 export class InvestmentService {
-  //     resultData = signal<
-  //     | {
-  //         year: number;
-  //         interest: number;
-  //         valueEndOfYear: number;
-  //         annualInvestment: number;
-  //         totalInterest: number;
-  //         totalAmountInvested: number;
-  //       }[]
-  //     | undefined
-  //   >(undefined);
-
-  resultData?: {
-    year: number;
-    interest: number;
-    valueEndOfYear: number;
-    annualInvestment: number;
-    totalInterest: number;
-    totalAmountInvested: number;
-  }[];
+  resultData = signal<
+    | {
+        year: number;
+        interest: number;
+        valueEndOfYear: number;
+        annualInvestment: number;
+        totalInterest: number;
+        totalAmountInvested: number;
+      }[]
+    | undefined
+  >(undefined);
 
   CalculateInvestmentResults(data: InvestmentInput) {
     const { initialInvestment, duration, expectedReturn, annualInvestment } =
@@ -48,7 +39,6 @@ export class InvestmentService {
       });
     }
 
-    // this.resultData.set(annualData);
-    this.resultData = annualData;
+    this.resultData.set(annualData);
   }
 }
