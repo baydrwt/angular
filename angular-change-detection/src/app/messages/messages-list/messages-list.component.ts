@@ -12,7 +12,7 @@ import { AsyncPipe } from '@angular/common';
 })
 export class MessagesListComponent {
   private messageService = inject(MessagesService);
-  messages$ = this.messageService.messages$;
+  messages = this.messageService.allMessages;
 
   get debugOutput() {
     console.log('[MessagesList] "debugOutput" binding re-evaluated.');
