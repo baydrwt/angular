@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
 
-import { TasksComponent, resolveUserTasks } from '../tasks/tasks.component';
+import { TasksComponent } from '../tasks/tasks.component';
 import {
   NewTaskComponent,
   canLeaveEditPage,
@@ -21,9 +21,6 @@ export const routes: Routes = [
         path: 'tasks', // <your-domain>/users/<uid>/tasks
         component: TasksComponent,
         runGuardsAndResolvers: 'always',
-        resolve: {
-          userTasks: resolveUserTasks,
-        },
       },
       {
         path: 'tasks/new',
